@@ -97,7 +97,7 @@ class _RandomVocabularyPageState extends State<RandomVocabularyPage> {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Random vocabulary quiz (A1 → C2) • Chọn level rồi Start',
+                      'Quiz từ vựng ngẫu nhiên (A1 → C2) • Chọn level rồi bắt đầu',
                       style: GoogleFonts.poppins(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
@@ -401,7 +401,7 @@ class _RandomVocabularyPageState extends State<RandomVocabularyPage> {
                 onPressed: _startRandomQuiz,
                 icon: const Icon(Icons.play_arrow_rounded),
                 label: Text(
-                  'Start Quiz (20 câu)',
+                  'Bắt đầu (20 câu)',
                   style: GoogleFonts.poppins(fontWeight: FontWeight.w800),
                 ),
                 style: ElevatedButton.styleFrom(

@@ -44,14 +44,14 @@ class HomePage extends StatelessWidget {
 
                     // Skills Section Title
                     Text(
-                      'Choose Your Skill',
+                      'Chọn kỹ năng',
                       style: GoogleFonts.poppins(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
                         color: textColor,
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 18),
 
                     // Skill Cards Grid
                     GridView.count(
@@ -151,17 +151,10 @@ class HomePage extends StatelessWidget {
   Widget _buildCurvedHeader(String name) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            const Color(0xFF6C63FF),
-            const Color(0xFF5A52FF),
-          ],
-        ),
+        color: const Color(0xFF6C63FF),
         borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(30),
-          bottomRight: Radius.circular(30),
+          bottomLeft: Radius.circular(28),
+          bottomRight: Radius.circular(28),
         ),
       ),
       child: SafeArea(
@@ -179,19 +172,19 @@ class HomePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Hi, $name! 👋',
+                        'Chào $name! 👋',
                         style: GoogleFonts.poppins(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
                           color: Colors.white,
                         ),
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        'Let\'s learn English together',
+                        'Hôm nay học gì nhỉ?',
                         style: GoogleFonts.poppins(
                           fontSize: 14,
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.white.withOpacity(0.85),
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -221,12 +214,12 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Container(
-              padding: const EdgeInsets.all(14),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.15),
-                borderRadius: BorderRadius.circular(16),
+                color: Colors.white.withOpacity(0.12),
+                borderRadius: BorderRadius.circular(14),
                 border: Border.all(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withOpacity(0.15),
                   width: 1,
                 ),
               ),
@@ -239,7 +232,7 @@ class HomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Daily Streak',
+                          'Chuỗi ngày học',
                           style: GoogleFonts.poppins(
                             fontSize: 12,
                             color: Colors.white.withOpacity(0.9),
@@ -248,11 +241,11 @@ class HomePage extends StatelessWidget {
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          '5 days in a row! 🔥',
+                          '5 ngày liên tiếp! 🔥',
                           style: GoogleFonts.poppins(
                             fontSize: 14,
                             color: Colors.white,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ],
@@ -284,11 +277,11 @@ class HomePage extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(18),
         child: Container(
           decoration: BoxDecoration(
             color: cardColor,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(18),
             border: Border.all(
               color: borderColor,
               width: 1,
@@ -296,10 +289,10 @@ class HomePage extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: isDark 
-                    ? Colors.black.withOpacity(0.3) 
-                    : Colors.black.withOpacity(0.04),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
+                    ? Colors.black.withOpacity(0.25) 
+                    : Colors.black.withOpacity(0.03),
+                blurRadius: 8,
+                offset: const Offset(0, 3),
               ),
             ],
           ),
@@ -307,38 +300,31 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 64,
-                height: 64,
+                width: 60,
+                height: 60,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      color,
-                      color.withOpacity(0.8),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.circular(18),
+                  color: color,
+                  borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: color.withOpacity(0.3),
-                      blurRadius: 12,
-                      offset: const Offset(0, 6),
+                      color: color.withOpacity(0.25),
+                      blurRadius: 8,
+                      offset: const Offset(0, 4),
                     ),
                   ],
                 ),
                 child: Icon(
                   icon,
-                  size: 32,
+                  size: 28,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 10),
               Text(
                 title,
                 style: GoogleFonts.poppins(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
                   color: textColor,
                 ),
               ),

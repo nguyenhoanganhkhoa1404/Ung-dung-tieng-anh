@@ -8,6 +8,8 @@ import '../core/theme/app_theme.dart';
 import '../core/routes/app_router.dart';
 import '../presentation/bloc/auth/auth_bloc.dart';
 import '../presentation/bloc/auth/auth_event.dart';
+import '../src/config/app_config.dart';
+import '../src/theme/app_theme.dart' as lingoflow;
 import 'di.dart';
 
 class MyApp extends StatelessWidget {
@@ -39,8 +41,12 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: AppLocalizations(locale).t('app_title'),
             debugShowCheckedModeBanner: false,
-            theme: AppTheme.lightTheme,
-            darkTheme: AppTheme.darkTheme,
+            theme: AppConfig.useLingoFlowTheme
+                ? lingoflow.LingoFlowTheme.lightTheme
+                : AppTheme.lightTheme,
+            darkTheme: AppConfig.useLingoFlowTheme
+                ? lingoflow.LingoFlowTheme.darkTheme
+                : AppTheme.darkTheme,
             themeMode: themeMode,
             locale: locale,
             supportedLocales: AppLocalizations.supportedLocales,

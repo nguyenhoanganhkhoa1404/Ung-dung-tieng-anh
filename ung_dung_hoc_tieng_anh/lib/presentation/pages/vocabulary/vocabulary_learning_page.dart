@@ -216,13 +216,13 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
       children: [
         // Stats Bar
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          color: Colors.white,
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+        color: Colors.white,
           child: Row(
             children: [
               Expanded(
                 child: _buildStatChip(
-                  'Correct',
+                  'Đúng',
                   _correctCount.toString(),
                   Colors.green,
                   Icons.check_circle,
@@ -231,7 +231,7 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
               const SizedBox(width: 12),
               Expanded(
                 child: _buildStatChip(
-                  'Wrong',
+                  'Sai',
                   _wrongCount.toString(),
                   Colors.red,
                   Icons.cancel,
@@ -240,7 +240,7 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
               const SizedBox(width: 12),
               Expanded(
                 child: _buildStatChip(
-                  'Remaining',
+                  'Còn lại',
                   (_shuffledList.length - _currentIndex - 1).toString(),
                   Colors.grey,
                   Icons.hourglass_empty,
@@ -292,8 +292,8 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
                   GFButton(
                     onPressed: _nextWord,
                     text: _currentIndex < _shuffledList.length - 1
-                        ? 'Next Question'
-                        : 'View Results',
+                        ? 'Câu tiếp theo'
+                        : 'Xem kết quả',
                     color: levelColor,
                     size: GFSize.LARGE,
                     fullWidthButton: true,
@@ -458,12 +458,12 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
     return GestureDetector(
       onTap: () => _selectAnswer(index),
       child: Container(
-        margin: const EdgeInsets.only(bottom: 12),
-        padding: const EdgeInsets.all(16),
+        margin: const EdgeInsets.only(bottom: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         decoration: BoxDecoration(
           color: getCardColor(),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: getBorderColor(), width: 2),
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(color: getBorderColor(), width: 1.5),
         ),
         child: Row(
           children: [
@@ -519,14 +519,14 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: isCorrect
-            ? Colors.green.withOpacity(0.05)
-            : Colors.orange.withOpacity(0.05),
-        borderRadius: BorderRadius.circular(16),
+            ? Colors.green.withOpacity(0.08)
+            : Colors.orange.withOpacity(0.08),
+        borderRadius: BorderRadius.circular(14),
         border: Border.all(
           color: isCorrect
-              ? Colors.green.withOpacity(0.3)
-              : Colors.orange.withOpacity(0.3),
-          width: 2,
+              ? Colors.green.withOpacity(0.25)
+              : Colors.orange.withOpacity(0.25),
+          width: 1.5,
         ),
       ),
       child: Column(
@@ -537,16 +537,16 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
             children: [
               Icon(
                 isCorrect ? Icons.check_circle : Icons.lightbulb,
-                color: isCorrect ? Colors.green : Colors.orange,
-                size: 24,
+                color: isCorrect ? Colors.green : Colors.orange[700],
+                size: 22,
               ),
               const SizedBox(width: 8),
               Text(
-                isCorrect ? 'Great Job!' : 'Learn More',
+                isCorrect ? 'Đúng rồi! 👍' : 'Xem lại nhé',
                 style: GoogleFonts.poppins(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: isCorrect ? Colors.green : Colors.orange,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                  color: isCorrect ? Colors.green : Colors.orange[700],
                 ),
               ),
             ],
@@ -622,10 +622,10 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
                       Icon(Icons.format_quote, size: 16, color: levelColor),
                       const SizedBox(width: 6),
                       Text(
-                        'Example',
+                        'Ví dụ',
                         style: GoogleFonts.poppins(
                           fontSize: 12,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
                           color: Colors.grey[700],
                         ),
                       ),
@@ -802,19 +802,19 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
             color: isPassed ? Colors.amber : Colors.grey,
           ),
           const SizedBox(height: 24),
-          Text(
-            isPassed ? 'Great Job!' : 'Keep Practicing!',
+            Text(
+            isPassed ? 'Làm tốt lắm! 🎉' : 'Tiếp tục cố gắng nhé!',
             style: GoogleFonts.poppins(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
               color: Colors.black87,
             ),
           ),
           const SizedBox(height: 16),
           Text(
-            'You completed ${widget.level} practice',
+            'Bạn đã hoàn thành level ${widget.level}',
             style: GoogleFonts.poppins(
-              fontSize: 16,
+              fontSize: 15,
               color: Colors.grey[600],
             ),
           ),
@@ -839,15 +839,15 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
                 Text(
                   '$accuracy%',
                   style: GoogleFonts.poppins(
-                    fontSize: 64,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 52,
+                    fontWeight: FontWeight.w600,
                     color: levelColor,
                   ),
                 ),
                 Text(
-                  'Accuracy',
+                  'Độ chính xác',
                   style: GoogleFonts.poppins(
-                    fontSize: 18,
+                    fontSize: 16,
                     color: Colors.grey[600],
                   ),
                 ),
@@ -856,7 +856,7 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
                   children: [
                     Expanded(
                       child: _buildResultStat(
-                        'Correct',
+                        'Đúng',
                         _correctCount.toString(),
                         Colors.green,
                         Icons.check_circle,
@@ -865,7 +865,7 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
                     const SizedBox(width: 16),
                     Expanded(
                       child: _buildResultStat(
-                        'Wrong',
+                        'Sai',
                         _wrongCount.toString(),
                         Colors.red,
                         Icons.cancel,
@@ -894,7 +894,7 @@ class _VocabularyLearningPageState extends State<VocabularyLearningPage> {
               });
               _generateOptions();
             },
-            text: 'Practice Again',
+            text: 'Làm lại',
             color: levelColor,
             size: GFSize.LARGE,
             fullWidthButton: true,

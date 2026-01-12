@@ -4,9 +4,9 @@ import 'dart:async';
 import '../../../core/l10n/app_localizations.dart';
 import '../home/home_page.dart';
 import '../vocabulary/random_vocabulary_page.dart';
-import '../leaderboard/leaderboard_page.dart';
 import '../profile/profile_page.dart';
 import '../dashboard/dashboard_page.dart';
+import '../../../src/screens/flashcard_screen.dart';
 import '../../../data/repositories/analytics_repository_impl.dart';
 import '../../../domain/services/analytics_service.dart';
 
@@ -88,7 +88,7 @@ class _MainPageState extends State<MainPage> {
           analyticsService: _analyticsService,
         ),
         RandomVocabularyPage(userId: _userId),
-        const LeaderboardPage(),
+        FlashcardScreen(userId: _userId), // Thay Leaderboard bằng Flashcard
         ProfilePage(userId: _userId),
       ];
 
@@ -160,7 +160,7 @@ class _MainPageState extends State<MainPage> {
                     _buildNavItem(0, Icons.home_rounded, context.l10n.t('nav_home')),
                     _buildNavItem(1, Icons.bar_chart_rounded, context.l10n.t('nav_board')),
                     const SizedBox(width: 56), // space for center button
-                    _buildNavItem(3, Icons.emoji_events_rounded, context.l10n.t('nav_rank')),
+                    _buildNavItem(3, Icons.style_rounded, 'Flashcard'), // Thay Leaderboard bằng Flashcard
                     _buildNavItem(4, Icons.person_rounded, context.l10n.t('nav_profile')),
                   ],
                 ),
