@@ -5,9 +5,6 @@ import 'widgets/skill_progress_card.dart';
 import 'widgets/heatmap_widget.dart';
 import 'widgets/weak_skills_card.dart';
 
-/// Dashboard hiển thị dữ liệu HỌC TẬP THỰC TẾ
-/// ❌ KHÔNG FAKE DATA
-/// ✅ Tất cả từ database
 class DashboardPage extends StatefulWidget {
   final String userId;
   final AnalyticsService analyticsService;
